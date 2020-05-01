@@ -9,7 +9,7 @@ public class Worker {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "imie")
     private String firstName;
@@ -34,7 +34,7 @@ public class Worker {
         this.mail = mail;
     }
 
-    public long getId(){
+    public Long getId(){
         return id;
     }
 

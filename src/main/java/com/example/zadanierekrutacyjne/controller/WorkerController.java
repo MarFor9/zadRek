@@ -10,11 +10,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v1")
 public class WorkerController {
 
     @Autowired
@@ -23,7 +24,7 @@ public class WorkerController {
     @Autowired
     private ModelMapper modelMapper;
 
-    @GetMapping("workers")
+    @GetMapping("/workers")
     public List<WorkerDTO> getAllWorkers(){
         return  workerService.getAllWorkers().stream()
                 .map(worker -> modelMapper.map(worker, WorkerDTO.class))
@@ -35,19 +36,19 @@ public class WorkerController {
         return modelMapper.map(workerService.getWorkersById(workerId), WorkerDTO.class);
     }
 
-    @PostMapping("workers")
+    @PostMapping("/workers")
     public Worker createWorker(@RequestBody @Validated WorkerDTO workerDTO){
         return workerService.createWorker(workerDTO);
     }
 
-    @PutMapping("workers/{id}")
+    @PutMapping("/workers/{id}")
     public WorkerDTO updateWorker(@PathVariable(value = "id") Long workerId,
                                   @Validated @RequestBody WorkerDTO workerDTO)
             throws ResourceNotFoundException {
         return modelMapper.map(workerService.updateWorker(workerId, workerDTO), WorkerDTO.class);
     }
 
-    @DeleteMapping("workers/{id}")
+    @DeleteMapping("/workers/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteWorker(@PathVariable(value = "id") Long workerId)
             throws ResourceNotFoundException {
