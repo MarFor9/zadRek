@@ -13,7 +13,7 @@ import java.util.List;
 public class WorkerService {
 
     @Autowired
-    WorkerRepositry workerRepositry;
+    private WorkerRepositry workerRepositry;
 
     public List<Worker> getAllWorkers() {
         return this.workerRepositry.findAll();
