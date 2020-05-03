@@ -12,6 +12,12 @@ Przed uruchomieniem aplikacji należy zainstalować Docker'a.
 Aby uruchomić aplikację :
 1. Należy w terminalu wpisać komendę "docker-compose up -d" 
 
-To wszystko aplikacja działa i można z niej korzystać.
+Przy pomocy programu np. Postman można korzystająć z poniższych api:
+* pobrać listę pracowników - [GET] http://localhost:8080/api/v1/workers
+* pobrać jednego pracownika - [GET] http://localhost:8080/api/v1/workers/id   (gdzie id jest liczba całkowitą)
+* dodać nowego pracownika - [POST] http://localhost:8080/api/v1/workers
+* edytować pracownika - [PUT] http://localhost:8080/api/v1/workers/id   (gdzie id jest liczba całkowitą)
+* usunąć pracownika - [DELETE] http://localhost:8080/api/v1/workers/id  (gdzie id jest liczba całkowitą)
+
 
 
