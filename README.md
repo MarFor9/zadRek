@@ -10,7 +10,7 @@ Opis: Przy użyciu powyższych technologii zaimplementuj prostą aplikację do o
 Przed uruchomieniem aplikacji należy zainstalować Docker'a. 
 
 Aby uruchomić aplikację :
-> 1. Należy w terminalu wpisać komendę "docker-compose up -d" 
+> 1. Należy w terminalu wpisać komendę **docker-compose up -d**
 
 Przy pomocy programu np. Postman można korzystająć z poniższych api:
 > * pobrać listę pracowników - [GET] http://localhost:8080/api/v1/workers
