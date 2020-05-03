@@ -16,6 +16,7 @@ Przy pomocy programu np. Postman można korzystająć z poniższych api:
 > * pobrać listę pracowników - [GET] http://localhost:8080/api/v1/workers
 > * pobrać jednego pracownika - [GET] http://localhost:8080/api/v1/workers/id   (gdzie id jest liczba całkowitą)
 > * dodać nowego pracownika - [POST] http://localhost:8080/api/v1/workers
+
 aby dodać nowego pracownika należy posłużyć się plikiem w formacie json:
 ```
 {
