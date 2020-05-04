@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://java.sun.com/jsf/core ">
+
+<h:head></h:head>
+<h:body>
+
+    <h:form>
+
+        <p:panel>
+            <f:facet name="header">
+                Dodawanie pracownika
+                <p:commandButton action="#{workerControllerJSF.refresh()}"
+                                 icon="pi pi-refresh" update="@form" process="@this"/>
+            </f:facet>
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Imie"/>
+                <p:inputText value="#{workerControllerJSF.worker.firstName}"
+                             required="true"/>
+                <p:outputLabel value="Nazwisko"/>
+                <p:inputText value="#{workerControllerJSF.worker.lastName}"
+                             required="true"/>
+                <p:outputLabel value="Adres zamieszkania"/>
+                <p:inputText value="#{workerControllerJSF.worker.address}"
+                             required="true"/>
+                <p:outputLabel value="E-mail"/>
+                <p:inputText value="#{workerControllerJSF.worker.mail}"
+                             required="true"/>
+                <p:outputLabel/>
+                <p:commandButton value="Dodaj" action="#{workerControllerJSF.save()}"
+                                 update="@form" process="@parent"/>
+
+            </h:panelGrid>
+        </p:panel>
+
+        <br/>
+
+        <p:panel>
+            <f:facet name="header">
+                Pracownicy
+                <p:commandButton action="#{workerControllerJSF.fetchAll()}"
+                                 icon="pi pi-refresh" update="@form" process="@this"/>
+            </f:facet>
+            <p:dataTable var="worker" value="#{workerControllerJSF.workers}"
+                         rows="10" paginator="true">
+
+                <p:column headerText="Id" width="10%">
+                    <h:outputText value="#{worker.id}"/>
+                </p:column>
+
+                <p:column headerText="Imie">
+                    <h:outputText value="#{worker.firstName}"/>
+                </p:column>
+
+                <p:column headerText="Nazwisko">
+                    <h:outputText value="#{worker.lastName}"/>
+                </p:column>
+
+                <p:column headerText="Adres zamieszkania">
+                    <h:outputText value="#{worker.address}"/>
+                </p:column>
+
+                <p:column headerText="E-mail">
+                    <h:outputText value="#{worker.mail}"/>
+                </p:column>
+
+                <p:column headerText="Edycja" width="10%">
+                    <p:commandButton icon="pi pi-pencil" action="#{workerControllerJSF.edit(worker)}"
+                                     update="@form" process="@this"/>
+                </p:column>
+
+                <p:column headerText="Usuwanie" width="10%">
+                    <p:commandButton icon="pi pi-pencil" action="#{workerControllerJSF.remove(worker)}"
+                                     update="@form" process="@this"/>
+                </p:column>
+
+            </p:dataTable>
+        </p:panel>
+    </h:form>
+
+</h:body>
+</html>
