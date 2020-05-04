@@ -33,10 +33,10 @@ aby dodać nowego pracownika należy posłużyć się plikiem w formacie json:
 
 
 Istnieje również możliwość:
-> dodawania,
-> edytowania,
-> usuwania
-> wyświetlenia wszystkich pracowników w przeglądarce pod adresem:
+> * dodawania,
+> * edytowania,
+> * usuwania
+> * wyświetlenia wszystkich pracowników w przeglądarce pod adresem:
 > **http://localhost:8080/worker.xhtml**
 
 
