@@ -22,7 +22,7 @@ public class AddWorkers {
 
     @EventListener(ApplicationReadyEvent.class)
     public void runExample() {
-        List<Worker> workers = new ArrayList<Worker>();
+        List<Worker> workers = new ArrayList<>();
         workers.add(new Worker("Jan", "Kowalski", "Poznan", "jankowalski@gamil.com"));
         workers.add(new Worker("Adam", "Nowak", "Warszawa", "adamnowak@gamil.com"));
         workers.add(new Worker("Grzegorz", "Mazur", "Gdansk", "grzegorzmaz@gamil.com"));
