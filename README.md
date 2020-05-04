@@ -9,8 +9,20 @@ Opis: Przy użyciu powyższych technologii zaimplementuj prostą aplikację do o
 
 Przed uruchomieniem aplikacji należy zainstalować Docker'a. 
 
-Aby uruchomić aplikację :
-> 1. Należy w terminalu wpisać komendę **docker-compose up -d**
+### Aby uruchomić aplikację należy:
+> 1. ~~Należy w terminalu wpisać komendę **docker-compose up -d**~~
+> 1. Skopiować repozytorium
+> 2. w terminalu wpisać komende: **docker run --name postgres -e POSTGRES_PASSWORD=root -e POSTGRES_DB=workers_db -d -p 5432:5432 postgres:alpine**
+> 3. uruchomić aplikacę np. w Intellij [RUN]
+
+Aplikacja jest dostępna w przeglądarce pod adresem:
+> **http://localhost:8080/worker.xhtml**
+
+Aplikacja daje możliwość:
+> * dodawania,
+> * edytowania,
+> * usuwania
+> * wyświetlenia wszystkich pracowników
 
 Przy pomocy programu np. Postman można korzystająć z poniższych api:
 > * pobrać listę pracowników - [GET] http://localhost:8080/api/v1/workers
@@ -31,12 +43,5 @@ aby dodać nowego pracownika należy posłużyć się plikiem w formacie json:
 > * edytować pracownika - [PUT] http://localhost:8080/api/v1/workers/id   (gdzie id jest liczba całkowitą)
 > * usunąć pracownika - [DELETE] http://localhost:8080/api/v1/workers/id  (gdzie id jest liczba całkowitą)
 
-
-Istnieje również możliwość:
-> * dodawania,
-> * edytowania,
-> * usuwania
-> * wyświetlenia wszystkich pracowników w przeglądarce pod adresem:
-> **http://localhost:8080/worker.xhtml**
 
 
