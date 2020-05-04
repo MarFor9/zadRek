@@ -32,7 +32,11 @@ aby dodać nowego pracownika należy posłużyć się plikiem w formacie json:
 > * usunąć pracownika - [DELETE] http://localhost:8080/api/v1/workers/id  (gdzie id jest liczba całkowitą)
 
 
-Istnieje również możliwość dodawania oraz wyświetlenia wszystkich pracowników w przeglądarce pod adresem:
-> http://localhost:8080/worker.xhtml
+Istnieje również możliwość:
+> dodawania,
+> edytowania,
+> usuwania
+> wyświetlenia wszystkich pracowników w przeglądarce pod adresem:
+> **http://localhost:8080/worker.xhtml**
 
 
